@@ -1,10 +1,8 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
-model_filename = 'trained_model.pkl'
-with open(model_filename, 'rb') as model_file:
-    model = pickle.load(model_file)
+model = joblib.load("trained_model.pkl")
 
 st.title("Income Prediction App")
 st.write("Predict income based on age and experience")
